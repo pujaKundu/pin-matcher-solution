@@ -29,4 +29,18 @@ document.getElementById('key-pad').addEventListener('click',
             calcInput.value = newNumber;
         }
 
-    })
+    });
+
+function verifyPin() {
+    const pin = document.getElementById('display-pin').value;
+    const typesNumbers = document.getElementById('typed-numbers').value;
+    const successMessage = document.getElementById('notify-success');
+    const failError = document.getElementById('notify-fail');
+    if (pin == typesNumbers) {
+        successMessage.style.display = 'block';
+        failError.style.display = 'none';
+    } else {
+        failError.style.display = 'block';
+        successMessage.style.display = 'none';
+    }
+}
